@@ -79,7 +79,7 @@ public class PriorityQueue<T> implements Comparator<T> {
 		int left = 2*index+1;
 		int right = Math.min(2*(index+1), count-1);
 		
-		while(left <count && this.compare((T)qArray[index], (T)qArray)>0)
+		while(left <count && (this.compare((T)qArray[index], (T)qArray[left])>0 || this.compare((T)qArray[index], (T)qArray[right])>0))
 		{
 			int minChild = (this.compare((T)qArray[left], (T)qArray[right])<0)?left:right;
 			Object temp = qArray[index];
