@@ -1,4 +1,4 @@
-package Strings;
+package Arrays;
 
 import static org.junit.Assert.*;
 import com.JavaUtilities.Arrays.Arrays;
