@@ -5,7 +5,7 @@ package com.JavaUtilities.Heaps;
 import java.lang.reflect.Array;
 import java.util.*;
 
-public class PriorityQueue<T> implements Comparator<T> {
+public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 	
 	private int capacity = 10;
 	private int count = 0;
@@ -120,6 +120,12 @@ public class PriorityQueue<T> implements Comparator<T> {
 		{
 			return this.comparator.compare(o1, o2);
 		}
+	}
+
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		return (Iterator<T>) Arrays.asList(this.qArray).iterator();
 	}
 
 }
