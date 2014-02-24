@@ -30,6 +30,20 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 		qArray = new Object[this.capacity];
 	}
 	
+	/*Copy Constructor*/
+	public PriorityQueue(PriorityQueue<T> pQueue)
+	{
+		this.capacity = pQueue.capacity;
+		this.count = pQueue.count;
+		this.comparator = pQueue.comparator;
+		this.qArray = new Object[pQueue.qArray.length];
+		
+		for(int i=0; i<this.qArray.length; i++)
+		{
+			this.qArray[i] = pQueue.qArray[i];
+		}		
+	}
+	
 	public boolean addElement(T element)
 	{
 		if(count == qArray.length)
