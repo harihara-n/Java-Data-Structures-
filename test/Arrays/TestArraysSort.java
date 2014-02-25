@@ -61,5 +61,59 @@ public class TestArraysSort {
 
 		
 	}
+	
+	@Test
+	public void TestMergeSort() {
+		
+		intArray[0] = 3; sortedIntArray[0] = 1;
+		intArray[1] = 1; sortedIntArray[1] = 2;
+		intArray[2] = 5; sortedIntArray[2] = 3;
+		intArray[3] = 4; sortedIntArray[3] = 4;
+		intArray[4] = 2; sortedIntArray[4] = 5;
+		
+		Arrays.mergeSort(intArray);
+		
+		for(int i=0; i<intArray.length; i++)
+		{
+			assertEquals(sortedIntArray[i], intArray[i]);
+		}
+		
+	}
+	
+	@Test
+	public void TestHeapSort() {
+		
+		intArray[0] = 3; sortedIntArray[0] = 1;
+		intArray[1] = 1; sortedIntArray[1] = 2;
+		intArray[2] = 5; sortedIntArray[2] = 3;
+		intArray[3] = 4; sortedIntArray[3] = 4;
+		intArray[4] = 2; sortedIntArray[4] = 5;
+		
+		Arrays.heapSort(intArray);
+		
+		for(int i=0; i<intArray.length; i++)
+		{
+			assertEquals(sortedIntArray[i], intArray[i]);
+		}
+		
+	}
+	
+	@Test
+	public void TestQuickSort() {
+		
+		intArray[0] = 3; sortedIntArray[0] = 1;
+		intArray[1] = 1; sortedIntArray[1] = 2;
+		intArray[2] = 5; sortedIntArray[2] = 3;
+		intArray[3] = 4; sortedIntArray[3] = 4;
+		intArray[4] = 2; sortedIntArray[4] = 5;
+		
+		Arrays.quickSort(intArray);
+		
+		for(int i=0; i<intArray.length; i++)
+		{
+			assertEquals(sortedIntArray[i], intArray[i]);
+		}
+		
+	}
 
 }
