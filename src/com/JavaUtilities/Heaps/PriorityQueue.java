@@ -12,17 +12,29 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 	private Comparator<T> comparator;
 	private Object[] qArray;
 	
+	/**
+	 * 
+	 */
 	public PriorityQueue()
 	{
 		qArray = new Object[this.capacity];
 	}
 	
+	/**
+	 * 
+	 * @param capacity
+	 */
 	public PriorityQueue(int capacity)
 	{
 		this.capacity = capacity;
 		qArray = new Object[this.capacity];
 	}
 	
+	/**
+	 * 
+	 * @param capacity
+	 * @param comparator
+	 */
 	public PriorityQueue(int capacity, Comparator<T> comparator)
 	{
 		this.capacity = capacity;
@@ -30,7 +42,10 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 		qArray = new Object[this.capacity];
 	}
 	
-	/*Copy Constructor*/
+	/**
+	 * 
+	 * @param pQueue
+	 */
 	public PriorityQueue(PriorityQueue<T> pQueue)
 	{
 		this.capacity = pQueue.capacity;
@@ -44,6 +59,11 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 		}		
 	}
 	
+	/**
+	 * 
+	 * @param element
+	 * @return
+	 */
 	public boolean addElement(T element)
 	{
 		if(count == qArray.length)
@@ -57,6 +77,10 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public T deleteElement()
 	{
 		if(count == 0)
@@ -71,6 +95,10 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 		return returnValue; 
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public T getTopElement()
 	{
 		if(count == 0)

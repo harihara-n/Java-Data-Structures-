@@ -15,7 +15,11 @@ public class Graph {
 	private final boolean isWeighted;
 	private HashMap<Vertex, ArrayList<Edge>> graph;
 	private PriorityQueue<Edge> edgeQueue;
-		
+	
+	/**
+	 * 
+	 * @param isWeighted
+	 */
 	public Graph(boolean isWeighted)
 	{
 		this.numVertices = 0;
@@ -28,6 +32,11 @@ public class Graph {
 		}
 	}
 	
+	/**
+	 * 	
+	 * @param isWeighted
+	 * @param maxNumVertices
+	 */
 	public Graph(boolean isWeighted, int maxNumVertices)
 	{
 		this.numVertices = 0;
@@ -40,6 +49,11 @@ public class Graph {
 		}		
 	}
 	
+	/**
+	 * 
+	 * @param label
+	 * @return
+	 */
 	public boolean addVertex(String label)
 	{
 		Vertex newVertex = new Vertex(label);
@@ -54,6 +68,12 @@ public class Graph {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param fromNode
+	 * @param toNode
+	 * @return
+	 */
 	public boolean addDirectedEdge(String fromNode, String toNode)
 	{
 		if(this.isWeighted)
@@ -63,6 +83,13 @@ public class Graph {
 		return addDirectedEdge(fromNode, toNode, null);
 	}
 	
+	/**
+	 * 
+	 * @param fromNode
+	 * @param toNode
+	 * @param weight
+	 * @return
+	 */
 	public boolean addDirectedEdge(String fromNode, String toNode, Integer weight)
 	{
 		if(!this.isWeighted && weight != null)
@@ -98,6 +125,12 @@ public class Graph {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param fromNode
+	 * @param toNode
+	 * @return
+	 */
 	public boolean removeDirectedEdge(String fromNode, String toNode)
 	{
 		ArrayList<Edge> e1 = graph.get(new Vertex(fromNode));
@@ -119,6 +152,12 @@ public class Graph {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param firstNode
+	 * @param secondNode
+	 * @return
+	 */
 	public boolean addUndirectedEdge(String firstNode, String secondNode)
 	{
 		if(this.isWeighted)
@@ -128,6 +167,13 @@ public class Graph {
 		return addUndirectedEdge(firstNode, secondNode, null);
 	}
 	
+	/**
+	 * 
+	 * @param firstNode
+	 * @param secondNode
+	 * @param weight
+	 * @return
+	 */
 	public boolean addUndirectedEdge(String firstNode, String secondNode, Integer weight)
 	{
 		if(!this.isWeighted && weight != null)
@@ -172,6 +218,12 @@ public class Graph {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param firstNode
+	 * @param secondNode
+	 * @return
+	 */
 	public boolean removeUndirectedEdge(String firstNode, String secondNode)
 	{
 		ArrayList<Edge> e1 = graph.get(new Vertex(firstNode));
@@ -213,6 +265,11 @@ public class Graph {
 		return true;
 	}
 	
+	/**
+	 * 
+	 * @param startNode
+	 * @return
+	 */
 	public ArrayList<String> breadthFirstSearch(String startNode)
 	{
 		if(!graph.containsKey(new Vertex(startNode)))
@@ -254,6 +311,11 @@ public class Graph {
 		return retList;
 	}
 	
+	/**
+	 * 
+	 * @param startNode
+	 * @return
+	 */
 	public ArrayList<String> depthFirstSearch(String startNode)
 	{
 		if(!graph.containsKey(new Vertex(startNode)))

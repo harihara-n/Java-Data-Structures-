@@ -6,6 +6,12 @@ import java.util.Iterator;
 
 public class Strings {
 	
+	/**
+	 * 
+	 * @param hayStack
+	 * @param needle
+	 * @return
+	 */
 	public static ArrayList<Integer> findNeedleExhaustive (String hayStack, String needle)
 	{
 		if(hayStack == null || needle == null)
@@ -39,30 +45,7 @@ public class Strings {
 		return returnIndices;
 	}
 	
-	/*private static int[] constructShiftTable(String needle)
-	{
-		int[] shiftTable = new int[needle.length()];
 		
-		for(int preIndex =needle.length()-1, postIndex = 1;preIndex >0; preIndex--, postIndex++)
-		{
-			String prefixStr = needle.substring(0, preIndex);
-			String postStr = needle.substring
-		}
-		
-	}*/
-	
-	/*public static ArrayList<Integer> findNeedleKMP (String hayStack, String needle)
-	{
-		if(hayStack == null || needle == null)
-		{
-			return new ArrayList<Integer>();
-		}
-		
-		ArrayList<Integer> returnIndices = new ArrayList<Integer>();
-		
-		
-	}*/
-	
 	private static HashMap<ArrayList<Integer>, Integer> levenshteinMap; 
 	
 	private static int getLevenshteinDistanceTo(String str1, String str2, int index1, int index2)
@@ -98,6 +81,12 @@ public class Strings {
 		return returnValue;
 	}
 	
+	/**
+	 * 
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
 	public static int getLevenshteinDistance(String str1, String str2)
 	{
 		if(str1 == null || str2 == null)
@@ -147,6 +136,12 @@ public class Strings {
 		return returnString;		
 	}
 	
+	/**
+	 * 
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
 	public static String getLongestCommonSubsequence(String str1, String str2)
 	{
 		if(str1 == null || str2 == null)
@@ -189,6 +184,12 @@ public class Strings {
 		return returnString;
 	}
 	
+	/**
+	 * 
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
 	public static String getLongestCommonSubstring(String str1, String str2)
 	{
 		if(str1 == null || str2 == null)
