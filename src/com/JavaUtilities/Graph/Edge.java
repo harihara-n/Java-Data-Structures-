@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 import com.JavaUtilities.Graph.Vertex;
 
-public class Edge implements Comparable<Edge> {
+class Edge implements Comparable<Edge> {
 	
 	private Vertex fromVertex;
 	private Vertex toVertex;
