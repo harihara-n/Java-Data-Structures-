@@ -26,14 +26,14 @@ public class TestDeleteHeapElement {
 	@Test
 	public void NoConstructorTest() {
 		intHeap.addElement(10);
-		Assert.assertEquals(10, intHeap.deleteElement().intValue());
-		Assert.assertEquals(null, intHeap.deleteElement());
+		Assert.assertEquals(10, intHeap.deleteTopElement().intValue());
+		Assert.assertEquals(null, intHeap.deleteTopElement());
 		
 		stringHeap.addElement("hello world");
 		stringHeap.addElement("not saying hello world");
-		Assert.assertEquals("hello world".compareTo(stringHeap.deleteElement()), 0);
-		Assert.assertEquals("not saying hello world".compareTo(stringHeap.deleteElement()), 0);
-		Assert.assertEquals(null, stringHeap.deleteElement());
+		Assert.assertEquals("hello world".compareTo(stringHeap.deleteTopElement()), 0);
+		Assert.assertEquals("not saying hello world".compareTo(stringHeap.deleteTopElement()), 0);
+		Assert.assertEquals(null, stringHeap.deleteTopElement());
 		
 		for(int i=20; i>=0; i--)
 		{
@@ -41,7 +41,7 @@ public class TestDeleteHeapElement {
 		}
 		for(int i=0; i<=20; i++)
 		{
-			Assert.assertEquals(i, intHeap.deleteElement().intValue());
+			Assert.assertEquals(i, intHeap.deleteTopElement().intValue());
 		}
 			
 	}
