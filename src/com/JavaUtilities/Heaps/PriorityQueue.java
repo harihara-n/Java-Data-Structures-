@@ -59,6 +59,35 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 		}		
 	}
 	
+	public boolean isEmpty()
+	{
+		if(this.count == 0)
+		{
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public int size()
+	{
+		return this.count;
+	}
+	
+	public int getIndex(T element)
+	{
+		for(int i=0; i<this.count; i++)
+		{
+			if(element.equals(this.qArray[i]))
+			{
+				return i;
+			}
+		}
+		
+		return -1;
+	}
+	
+	
 	/**
 	 * 
 	 * @param element
@@ -81,7 +110,7 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 	 * 
 	 * @return
 	 */
-	public T deleteElement()
+	public T deleteTopElement()
 	{
 		if(count == 0)
 		{
@@ -90,9 +119,45 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 		
 		T returnValue = (T)qArray[0];
 		qArray[0] = qArray[count-1];
-		this.topdownHeapify();
+		this.topdownHeapify(0);
 		count--;
 		return returnValue; 
+	}
+	
+	/**
+	 * 
+	 * @param element
+	 * @return
+	 */	
+	public T deleteElement(T element)
+	{
+		int index = this.getIndex(element);
+		if(index == -1)
+		{
+			return null;
+		}
+		
+		return deleteElementAt(index);
+	}
+	
+	
+	/**
+	 * 
+	 * @param index
+	 * @return
+	 */
+	public T deleteElementAt(int index)
+	{
+		if(index >= this.count)
+		{
+			return null;
+		}
+		
+		T returnValue = (T)this.qArray[index];
+		this.qArray[index] = this.qArray[count-1];
+		this.count--;
+		this.topdownHeapify(index);		
+		return returnValue;		
 	}
 	
 	/**
@@ -115,9 +180,8 @@ public class PriorityQueue<T> implements Comparator<T>, Iterable<T> {
 	}
 	
 	
-	private void topdownHeapify()
+	private void topdownHeapify(int index)
 	{
-		int index = 0;
 		int left = 2*index+1;
 		int right = Math.min(2*(index+1), count-1);
 		
