@@ -1,8 +1,12 @@
 package com.JavaUtilities.Graph;
 
+import java.util.Comparator;
+
 class Vertex {
 	
 	private String label;
+	private int rank;
+	private Vertex parent;
 	
 	Vertex(String label)
 	{
@@ -14,6 +18,22 @@ class Vertex {
 	}
 	public void setLabel(String label) {
 		this.label = label;
+	}
+	
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	
+	public Vertex getParent() {
+		return parent;
+	}
+
+	public void setParent(Vertex parent) {
+		this.parent = parent;
 	}
 
 	@Override
