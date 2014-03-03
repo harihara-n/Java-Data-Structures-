@@ -16,6 +16,7 @@ public class TestGraphTraversal {
 	
 	Graph g = new Graph(false);
 	ArrayList<String> bfsList = new ArrayList<String>();
+	ArrayList<String> dfsList = new ArrayList<String>();
 	
 	@Before
 	public void setUp() throws Exception {
@@ -39,14 +40,14 @@ public class TestGraphTraversal {
 
 	@Test
 	public void testBreadthFirstSearch() {
-		bfsList.add("a");
-		bfsList.add("b");
-		bfsList.add("c");
-		bfsList.add("d");
-		bfsList.add("e");
+		dfsList.add("a");
+		dfsList.add("b");
+		dfsList.add("c");
+		dfsList.add("d");
+		dfsList.add("e");
 		
 		ArrayList<String> retList = g.breadthFirstSearch("a");
-		Assert.assertEquals(bfsList, retList);				
+		Assert.assertEquals(dfsList, retList);				
 	}
 	
 	@Test
